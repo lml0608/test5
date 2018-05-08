@@ -62,9 +62,11 @@ def area2(request,id):
     else:
         data =[{}]
 
-    # list = []
+    list = []
     for area in data:
-        list.append(area)
-    data1 = {'data':data}
-    data2 = json.dumps(data1)
-    return JsonResponse(data2)
+        list.append([area.id,area.title])
+
+
+    data1 = {'data':list}
+    print(data1)
+    return JsonResponse(data1)
